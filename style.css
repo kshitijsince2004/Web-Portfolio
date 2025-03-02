@@ -1,76 +1,315 @@
-/* Team Section Styling */
-.team {
-  padding: 50px 0;
-  background: #F0F8FF;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #f8f9fa;
+  --dark-color: #343a40;
+  --light-gray: #e9ecef;
+  --white: #ffffff;
+  --black: #000000;
+  --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.team .content {
-  width: 80%;
-  margin: auto;
-  text-align: center;
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
-.team .title span {
-  font-size: 30px;
-  font-weight: 600;
-  color: #0E2431;
-  position: relative;
-  padding-bottom: 8px;
+body {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
 }
 
-.team-members {
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--white);
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 40px;
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: var(--shadow);
+  z-index: 1000;
 }
 
-.team .member {
-  width: calc(100% / 3 - 20px);
-  text-align: center;
-  padding: 20px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s ease;
+.navbar .logo a {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-.team .member img {
-  width: 120px;
-  height: 120px;
+.navbar .menu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu li a {
+  text-decoration: none;
+  color: var(--dark-color);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar .menu li a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Navbar */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Scroll-to-top Button */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 12px;
   border-radius: 50%;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+}
+
+.scroll-button:hover {
+  background: var(--dark-color);
+}
+
+/* Sections */
+section {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.title span {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('images/hero-bg.jpg') no-repeat center/cover;
+  color: var(--white);
+}
+
+.home-content .text {
+  text-align: center;
+}
+
+.home-content .text-one {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.home-content .text-two {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.home-content .text-three {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--light-gray);
+}
+
+.button button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.button button:hover {
+  background: var(--dark-color);
+}
+
+/* About Section */
+.about-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-details .left img {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.about-details .right {
+  max-width: 500px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+/* Skills Section */
+.skills-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.skills-details .text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.skills-details .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  background: var(--white);
+  padding: 20px;
+  width: 150px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.box .per {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Services Section */
+.services .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services .box {
+  background: var(--white);
+  padding: 30px;
+  width: 280px;
+  margin: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.services .box:hover {
+  transform: translateY(-10px);
+}
+
+.services .box i {
+  font-size: 40px;
+  color: var(--primary-color);
   margin-bottom: 10px;
 }
 
-.team .member h3 {
-  font-size: 20px;
-  color: #0E2431;
-  margin-bottom: 5px;
+/* Contact Section */
+.contact .text {
+  max-width: 600px;
+  margin: auto;
 }
 
-.team .member p {
-  color: #4070f4;
-  font-size: 18px;
+/* Footer */
+footer {
+  background: var(--dark-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
 }
 
-.team .member:hover {
-  background: #4070f4;
-  color: #fff;
-}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
 
-.team .member:hover p {
-  color: #fff;
-}
+  .menu-btn {
+    display: block;
+  }
 
-/* Responsive for Smaller Screens */
-@media (max-width: 900px) {
-  .team-members {
+  .navbar .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+  }
+
+  .navbar .menu.active {
+    right: 0;
+  }
+
+  .navbar .menu li {
+    margin: 20px 0;
+  }
+
+  .home-content .text-two {
+    font-size: 30px;
+  }
+
+  .skills-details,
+  .about-details {
+    flex-direction: column;
+  }
+
+  .about-details .right {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .services .boxes,
+  .skills-details .boxes {
     flex-direction: column;
     align-items: center;
   }
 
-  .team .member {
-    width: 80%;
-    margin-bottom: 20px;
+  .box {
+    width: 90%;
   }
 }
